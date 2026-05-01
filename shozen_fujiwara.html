@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shôzen Fujiwara — Candidature Clan Fujiwara</title>
+<style>
+  :root {
+    --ink: #0a0a0d;
+    --ink-2: #13131a;
+    --bone: #efe9dd;
+    --bone-dim: #b8b1a3;
+    --bone-mute: #6e6a5e;
+    --blood: #8b1a1a;
+    --cursed: #c9a45e;
+    --moon: #d4d8e0;
+    --jade: #4a7060;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--ink);
+    color: var(--bone);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(ellipse at 15% 0%, rgba(139, 26, 26, 0.18), transparent 50%),
+      radial-gradient(ellipse at 85% 100%, rgba(74, 112, 96, 0.12), transparent 55%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    opacity: 0.4;
+    z-index: 1;
+    mix-blend-mode: overlay;
+  }
+
+  main { position: relative; z-index: 2; }
+
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    align-items: center;
+    padding: 80px;
+    position: relative;
+    border-bottom: 1px solid rgba(239, 233, 221, 0.08);
+  }
+
+  .hero-content { padding-right: 40px; }
+
+  .hero h1 {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(64px, 8vw, 120px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--bone);
+    margin-bottom: 28px;
+  }
+
+  .hero h1 em {
+    font-family: Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--blood);
+    display: block;
+    font-size: 0.3em;
+    margin-top: 20px;
+    line-height: 1.4;
+  }
+
+  .hero-sigil {
+    position: relative;
+    aspect-ratio: 1;
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sigil-svg {
+    width: 100%;
+    height: 100%;
+    animation: drift 22s ease-in-out infinite;
+  }
+
+  @keyframes drift {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-6px) rotate(-0.5deg); }
+  }
+
+  .sigil-rotate {
+    transform-origin: 200px 200px;
+    animation: spin 80s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .toc-section {
+    padding: 140px 80px;
+    border-bottom: 1px solid rgba(239, 233, 221, 0.08);
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(139, 26, 26, 0.06), transparent 60%),
+      var(--ink);
+  }
+
+  .toc-header {
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  .toc-eyebrow {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--cursed);
+    margin-bottom: 16px;
+  }
+
+  .toc-title {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(48px, 6vw, 80px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--bone);
+  }
+
+  .toc-list {
+    max-width: 900px;
+    margin: 0 auto;
+    list-style: none;
+  }
+
+  .toc-item {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 32px;
+    align-items: center;
+    padding: 32px 40px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(239, 233, 221, 0.1);
+    background: rgba(19, 19, 26, 0.5);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    position: relative;
+  }
+
+  .toc-item:hover {
+    border-color: var(--blood);
+    background: rgba(28, 28, 38, 0.7);
+    transform: translateX(8px);
+  }
+
+  .toc-item:hover .toc-arrow { color: var(--blood); transform: translateX(4px); }
+
+  .toc-num {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 48px;
+    color: var(--cursed);
+    line-height: 1;
+  }
+
+  .toc-text h3 {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--bone);
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .toc-text p {
+    font-size: 16px;
+    color: var(--bone-dim);
+    font-style: italic;
+  }
+
+  .toc-arrow {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: var(--bone-mute);
+    transition: all 0.3s ease;
+  }
+
+  .intro-section {
+    padding: 120px 80px;
+    border-bottom: 1px solid rgba(239, 233, 221, 0.08);
+  }
+
+  .section-title {
+    font-family: Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1.05;
+    color: var(--bone);
+    margin-bottom: 56px;
+    letter-spacing: -0.02em;
+    max-width: 800px;
+  }
+
+  .section-title .accent {
+    color: var(--blood);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .identity-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  }
+
+  .id-card {
+    grid-column: span 4;
+    padding: 36px 30px;
+    background: linear-gradient(180deg, rgba(28, 28, 38, 0.6) 0%, rgba(19, 19, 26, 0.3) 100%);
+    border: 1px solid rgba(239, 233, 221, 0.08);
+    position: relative;
+    transition: all 0.4s ease;
+  }
+
+  .id-card:hover {
+    border-color: var(--blood);
+    transform: translateY(-4px);
+  }
+
+  .id-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 24px; height: 24px;
+    border-top: 1px solid var(--cursed);
+    border-left: 1px solid var(--cursed);
+  }
+
+  .id-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 24px; height: 24px;
+    border-bottom: 1px solid var(--cursed);
+    border-right: 1px solid var(--cursed);
+  }
+
+  .id-label {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--bone-mute);
+    margin-bottom: 12px;
+  }
+
+  .id-value {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--bone);
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+
+  .id-sub {
+    font-size: 16px;
+    color: var(--bone-dim);
+  }
+
+  .id-card.wide { grid-column: span 6; }
+  .id-card.full { grid-column: span 12; }
+
+  .part-divider {
+    padding: 100px 80px;
+    text-align: center;
+    border-bottom: 1px solid rgba(239, 233, 221, 0.08);
+    background: #050507;
+  }
+
+  .part-num {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--cursed);
+    margin-bottom: 12px;
+  }
+
+  .part-title {
+    font-family: Georgia, serif;
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 700;
+    color: var(--bone);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .part-title em { color: var(--blood); font-style: italic; font-weight: 400; }
+
+  .part-line {
+    width: 80px;
+    height: 1px;
+    background: var(--blood);
+    margin: 32px auto 0;
+  }
+
+  .motiv-section {
+    padding: 140px 80px;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(139, 26, 26, 0.08), transparent 60%),
+      var(--ink);
+    border-bottom: 1px solid rgba(239, 233, 221, 0.08);
+  }
+
+  .motiv-block {
+    max-width: 820px;
+    margin: 0 auto 64px;
+  }
+
+  .motiv-block:last-child { margin-bottom: 0; }
+
+  .motiv-block h3 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--bone);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .motiv-block h3 .accent { color: var(--blood); font-style: italic; font-weight: 400; }
+
+  .motiv-block p {
+    font-size: 17.5px;
+    color: var(--bone-dim);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .story-section {
+    padding: 140px 80px;
+    background: linear-gradient(180deg, var(--ink) 0%, #08080b 100%);
+    border-bottom: 1px solid rgba(239, 233, 221, 0.08);
+  }
+
+  .story-intro {
+    max-width: 720px;
+    margin: 0 auto 80px;
+    text-align: center;
+    font-size: 19px;
+    color: var(--bone-dim);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  .story-chapters {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .chapter {
+    padding: 48px 0;
+    border-bottom: 1px solid rgba(239, 233, 221, 0.08);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .chapter:last-child { border-bottom: none; }
+
+  .chapter-mark {
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: var(--cursed);
+    font-size: 22px;
+    padding-top: 8px;
+  }
+
+  .chapter-mark span {
+    display: block;
+    font-size: 56px;
+    color: var(--bone);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1;
+    margin-top: 4px;
+  }
+
+  .chapter-content h3 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--bone);
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .chapter-content p {
+    font-size: 17px;
+    color: var(--bone-dim);
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+
+  /* OBJECTIFS — terme court / moyen / long */
+  .obj-section {
+    padding: 140px 80px;
+    border-bottom: 1px solid rgba(239, 233, 221, 0.08);
+  }
+
+  .obj-tier {
+    margin-bottom: 80px;
+  }
+
+  .obj-tier:last-child { margin-bottom: 0; }
+
+  .obj-tier-header {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--blood);
+  }
+
+  .obj-tier-mark {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 20px;
+    color: var(--cursed);
+  }
+
+  .obj-tier-title {
+    font-family: Georgia, serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--bone);
+    letter-spacing: -0.01em;
+  }
+
+  .obj-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .obj-card {
+    padding: 28px 28px;
+    background: rgba(19, 19, 26, 0.4);
+    border: 1px solid rgba(239, 233, 221, 0.08);
+    transition: all 0.3s ease;
+  }
+
+  .obj-card:hover {
+    border-color: var(--blood);
+    transform: translateY(-3px);
+  }
+
+  .obj-card h4 {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--bone);
+    margin-bottom: 10px;
+    line-height: 1.25;
+  }
+
+  .obj-card p {
+    font-size: 16px;
+    color: var(--bone-dim);
+    line-height: 1.7;
+  }
+
+  .obj-card.wide { grid-column: span 2; }
+
+  /* TIMELINE GMOD */
+  .exp-section {
+    padding: 140px 80px;
+    border-bottom: 1px solid rgba(239, 233, 221, 0.08);
+  }
+
+  .exp-timeline {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    padding-left: 32px;
+  }
+
+  .exp-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: linear-gradient(180deg, var(--blood) 0%, var(--bone-mute) 50%, transparent 100%);
+  }
+
+  .exp-entry {
+    position: relative;
+    padding: 40px 0 40px 48px;
+  }
+
+  .exp-entry::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 52px;
+    width: 9px;
+    height: 9px;
+    background: var(--blood);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px var(--ink), 0 0 12px var(--blood);
+  }
+
+  .exp-entry h3 {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    color: var(--bone);
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+
+  .exp-entry .exp-meta {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--cursed);
+    margin-bottom: 14px;
+  }
+
+  .exp-entry p {
+    color: var(--bone-dim);
+    line-height: 1.7;
+    max-width: 720px;
+    margin-bottom: 12px;
+  }
+
+  /* ANCIENS PERSOS */
+  .past-section {
+    padding: 140px 80px;
+    background: linear-gradient(180deg, var(--ink) 0%, #08080b 100%);
+    border-bottom: 1px solid rgba(239, 233, 221, 0.08);
+  }
+
+  .past-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .past-card {
+    padding: 40px 36px;
+    background: rgba(19, 19, 26, 0.5);
+    border: 1px solid rgba(239, 233, 221, 0.08);
+    position: relative;
+  }
+
+  .past-card::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 24px;
+    right: 24px;
+    height: 1px;
+    background: var(--blood);
+  }
+
+  .past-card .past-server {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--cursed);
+    margin-bottom: 8px;
+  }
+
+  .past-card h4 {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--bone);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+
+  .past-card .past-role {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--bone-dim);
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(239, 233, 221, 0.08);
+  }
+
+  .past-card p {
+    font-size: 16px;
+    color: var(--bone-dim);
+    line-height: 1.75;
+    margin-bottom: 12px;
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: 80px 80px 60px;
+    text-align: center;
+    background: #050507;
+  }
+
+  .footer-kanji {
+    font-family: Georgia, serif;
+    font-size: 56px;
+    color: var(--blood);
+    margin-bottom: 20px;
+    letter-spacing: 0.4em;
+    padding-left: 0.4em;
+  }
+
+  .footer-name {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    color: var(--bone-dim);
+    font-style: italic;
+  }
+
+  .footer-name span { color: var(--bone); font-style: normal; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 80px 32px 60px;
+    }
+    .hero-content { padding-right: 0; }
+    .toc-section, .intro-section, .motiv-section, .story-section, .exp-section, .part-divider, .obj-section, .past-section { padding: 80px 32px; }
+    .toc-item { grid-template-columns: 60px 1fr; padding: 24px; gap: 20px; }
+    .toc-arrow { display: none; }
+    .toc-num { font-size: 36px; }
+    .toc-text h3 { font-size: 22px; }
+    .identity-grid .id-card,
+    .identity-grid .id-card.wide,
+    .identity-grid .id-card.full { grid-column: span 12; }
+    .chapter { grid-template-columns: 1fr; gap: 16px; }
+    .chapter-mark span { font-size: 40px; }
+    .obj-grid { grid-template-columns: 1fr; }
+    .obj-card.wide { grid-column: span 1; }
+    .past-grid { grid-template-columns: 1fr; }
+    .footer { padding: 60px 32px; }
+  }
+</style>
+</head>
+<body>
+
+<main>
+
+  <!-- COUVERTURE -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>
+        Shôzen<br>Fujiwara
+        <em>— l'héritier qui apprend dans l'ombre.</em>
+      </h1>
+    </div>
+
+    <div class="hero-sigil">
+      <svg class="sigil-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="200" cy="200" r="120" fill="rgba(139, 26, 26, 0.15)" filter="blur(40px)"/>
+
+        <g class="sigil-rotate">
+          <circle cx="200" cy="200" r="180" fill="none" stroke="rgba(139, 26, 26, 0.4)" stroke-width="0.5"/>
+          <circle cx="200" cy="200" r="170" fill="none" stroke="rgba(239, 233, 221, 0.15)" stroke-width="0.5" stroke-dasharray="2 6"/>
+        </g>
+
+        <circle cx="200" cy="200" r="140" fill="none" stroke="rgba(201, 164, 94, 0.3)" stroke-width="0.5"/>
+        <circle cx="200" cy="200" r="100" fill="none" stroke="rgba(239, 233, 221, 0.2)" stroke-width="0.5" stroke-dasharray="1 3"/>
+
+        <g stroke="rgba(201, 164, 94, 0.5)" stroke-width="0.7" fill="none">
+          <line x1="80" y1="80" x2="320" y2="320"/>
+          <line x1="320" y1="80" x2="80" y2="320"/>
+        </g>
+
+        <text x="200" y="218" text-anchor="middle" font-family="Georgia, serif" font-size="42" fill="rgba(239, 233, 221, 0.9)" font-weight="700">藤</text>
+      </svg>
+    </div>
+  </section>
+
+
+  <!-- SOMMAIRE -->
+  <section class="toc-section">
+    <div class="toc-header">
+      <p class="toc-eyebrow">Plan de ma candidature</p>
+      <h2 class="toc-title">Le dossier en quatre parties</h2>
+    </div>
+
+    <ul class="toc-list">
+      <li>
+        <a href="#partie-1" class="toc-item">
+          <div class="toc-num">I</div>
+          <div class="toc-text">
+            <h3>Motivations HRP</h3>
+            <p>Qui je suis, ce que j'apporte, ce que j'attends</p>
+          </div>
+          <div class="toc-arrow">→</div>
+        </a>
+      </li>
+      <li>
+        <a href="#partie-2" class="toc-item">
+          <div class="toc-num">II</div>
+          <div class="toc-text">
+            <h3>Histoire de Shôzen</h3>
+            <p>Naissance, éducation, l'ombre du clan et la fascination de la matière</p>
+          </div>
+          <div class="toc-arrow">→</div>
+        </a>
+      </li>
+      <li>
+        <a href="#partie-3" class="toc-item">
+          <div class="toc-num">III</div>
+          <div class="toc-text">
+            <h3>Objectifs RP</h3>
+            <p>Court, moyen et long terme</p>
+          </div>
+          <div class="toc-arrow">→</div>
+        </a>
+      </li>
+      <li>
+        <a href="#partie-4" class="toc-item">
+          <div class="toc-num">IV</div>
+          <div class="toc-text">
+            <h3>Mon expérience Garry's Mod</h3>
+            <p>Heures de jeu, serveurs marqués, anciens personnages</p>
+          </div>
+          <div class="toc-arrow">→</div>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+
+  <!-- FICHE D'IDENTITÉ -->
+  <section class="intro-section">
+    <h2 class="section-title">Carte du <span class="accent">postulant</span></h2>
+
+    <div class="identity-grid">
+      <div class="id-card">
+        <div class="id-label">Nom du personnage</div>
+        <div class="id-value">Shôzen Fujiwara</div>
+        <div class="id-sub">藤原 焦然</div>
+      </div>
+      <div class="id-card">
+        <div class="id-label">Âge</div>
+        <div class="id-value">14 ans</div>
+        <div class="id-sub">Hokkaido</div>
+      </div>
+      <div class="id-card">
+        <div class="id-label">Statut</div>
+        <div class="id-value">Héritier Fujiwara</div>
+        <div class="id-sub">Fils du patriarche Fuzen Fujiwara</div>
+      </div>
+
+      <div class="id-card full">
+        <div class="id-label">Caractère</div>
+        <div class="id-value">Discret, timide, réservé, observateur</div>
+        <div class="id-sub">Parle peu, voix basse. Évite de s'imposer. Observe constamment et réfléchit avant d'agir. Très attentif, méthodique, respect strict des règles, et un vrai désir d'évoluer malgré sa réserve.</div>
+      </div>
+
+      <div class="id-card full">
+        <div class="id-label">Place dans le clan</div>
+        <div class="id-value">L'héritier dans l'ombre du savoir</div>
+        <div class="id-sub">Shôzen a grandi dans l'ombre du savoir et des responsabilités du clan. Son père Fuzen est le gardien des archives et le responsable de la stabilité de la barrière d'Hokkaido. Très tôt, Shôzen a compris le rôle de son clan : préserver ce que les autres ne voient pas.</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PARTIE I -->
+  <section class="part-divider" id="partie-1">
+    <p class="part-num">Partie I</p>
+    <h2 class="part-title">Motivations <em>HRP</em></h2>
+    <div class="part-line"></div>
+  </section>
+
+  <section class="motiv-section">
+
+    <div class="motiv-block">
+      <h3>Qui <span class="accent">je suis</span></h3>
+      <p>Salut, moi c'est Kais, j'ai 21 ans et je vis au Maroc. Je suis actuellement en études de commerce, et je suis disponible à peu près tout le temps.</p>
+    </div>
+
+    <div class="motiv-block">
+      <h3>Ce que <span class="accent">j'apporte</span></h3>
+      <p>J'ai 1560 heures de RP sur Garry's Mod, et 260 heures spécifiquement sur le JJK FOC. J'arrive avec une vraie expérience derrière moi et une bonne connaissance du lore.</p>
+      <p>Je me sens prêt pour une nouvelle étape : incarner un personnage de clan avec un lore qui me donne envie de me connecter, de m'investir, et une identité forte à exploiter pleinement. C'est exactement ce que je viens chercher ici.</p>
+    </div>
+
+    <div class="motiv-block">
+      <h3>Ce que <span class="accent">j'attends</span></h3>
+      <p>Pour moi, rejoindre un clan serait une excellente occasion de faire évoluer mon RP. Le Clan Fujiwara est pour moi le plus interessant, avec leur capacité de construct très utile en passif ainsi que le coté mystérieux et et les nombreux secret du clan.</p>
+    </div>
+
+    <div class="motiv-block">
+      <h3>Mes <span class="accent">disponibilités</span></h3>
+      <p>Disponible à peu près tout le temps.</p>
+    </div>
+
+  </section>
+
+
+  <!-- PARTIE II — HISTOIRE -->
+  <section class="part-divider" id="partie-2">
+    <p class="part-num">Partie II</p>
+    <h2 class="part-title">Histoire <em>de Shôzen</em></h2>
+    <div class="part-line"></div>
+  </section>
+
+  <section class="story-section">
+    <p class="story-intro">
+      Shôzen Fujiwara est né au sein du Clan Fujiwara. Son père, Fuzen Fujiwara, est le gardien des archives et le responsable de la stabilité de la barrière d'Hokkaido. Voici comment Shôzen s'est construit dans cet héritage.
+    </p>
+
+    <div class="story-chapters">
+
+      <div class="chapter">
+        <div class="chapter-mark">
+          Chapitre
+          <span>I</span>
+        </div>
+        <div class="chapter-content">
+          <h3>Naître à l'ombre des archives</h3>
+          <p>Shôzen est né au sein du Clan Fujiwara. Depuis son enfance, il a grandi en observant un rôle essentiel : préserver ce que les autres ne voient pas. Ce rôle, son père l'incarne chaque jour, et c'est dans cette idée que Shôzen a été élevé.</p>
+        </div>
+      </div>
+
+      <div class="chapter">
+        <div class="chapter-mark">
+          Chapitre
+          <span>II</span>
+        </div>
+        <div class="chapter-content">
+          <h3>Une éducation stricte</h3>
+          <p>Son éducation fut particulièrement stricte. Fuzen lui a appris à respecter chaque règle, à ne jamais parler sans certitude, et à toujours mesurer les conséquences de ses actes.</p>
+          <p>C'est cette éducation qui a façonné Shôzen, le rendant craintif à l'idée de fauter en interagissant avec les gens. Petit à petit, il s'est refermé sur lui-même.</p>
+        </div>
+      </div>
+
+      <div class="chapter">
+        <div class="chapter-mark">
+          Chapitre
+          <span>III</span>
+        </div>
+        <div class="chapter-content">
+          <h3>Les Cahiers des Traces</h3>
+          <p>Très tôt, Shôzen a compris le rôle de son clan. C'est dans ce cadre qu'il a commencé à écrire ses Cahiers des Traces.</p>
+          <p>Chaque trace y est construite avec sa propre substance, laissant une empreinte occulte unique, fidèle aux traditions du clan. Ces cahiers sont à la fois un exercice rigoureux et une façon, pour lui, de poser sur le papier ce qu'il n'arrive pas toujours à dire.</p>
+        </div>
+      </div>
+
+      <div class="chapter">
+        <div class="chapter-mark">
+          Chapitre
+          <span>IV</span>
+        </div>
+        <div class="chapter-content">
+          <h3>Muzen, le cousin libre</h3>
+          <p>Mais malgré cette rigueur, Shôzen observe autre chose. Son cousin, Muzen, semble bien différent. Plus libre. Plus à l'aise. Plus capable de parler, d'interagir, d'exister sans réfléchir à chaque mot.</p>
+          <p>Shôzen le regarde souvent avec envie. Sans vraiment s'en rendre compte, il s'accroche à lui. Il reste proche, l'écoute, l'observe, comme s'il cherchait inconsciemment à comprendre comment être comme lui. Muzen représente ce que Shôzen n'est pas encore.</p>
+        </div>
+      </div>
+
+      <div class="chapter">
+        <div class="chapter-mark">
+          Chapitre
+          <span>V</span>
+        </div>
+        <div class="chapter-content">
+          <h3>La fascination de la matière, et la forge</h3>
+          <p>Avec le temps, Shôzen a développé une fascination pour la matière. C'est ce qui le relie le plus naturellement aux arts du clan, et ce qui guide son apprentissage au quotidien.</p>
+          <p>Dans un second temps, il a trouvé un échappatoire dans la forge. Là, il se lâche, frappant de toutes ses forces les éléments. Il n'utilise pas son construct pour la forge : il veut faire des œuvres qui durent dans le temps, faites à la sueur et à la main.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- PARTIE III — OBJECTIFS RP -->
+  <section class="part-divider" id="partie-3">
+    <p class="part-num">Partie III</p>
+    <h2 class="part-title">Objectifs <em>RP</em></h2>
+    <div class="part-line"></div>
+  </section>
+
+  <section class="obj-section">
+
+    <!-- COURT TERME -->
+    <div class="obj-tier">
+      <div class="obj-tier-header">
+        <span class="obj-tier-mark">Premier palier</span>
+        <h3 class="obj-tier-title">Court terme</h3>
+      </div>
+
+      <div class="obj-grid">
+        <div class="obj-card">
+          <h4>Trouver un maître en forge</h4>
+          <p>Approfondir son art à la forge auprès d'un mentor reconnu, et progresser dans cette discipline qui lui est devenue essentielle.</p>
+        </div>
+        <div class="obj-card">
+          <h4>Rejoindre Production & Logistique</h4>
+          <p>Suivre son père sur cette voie et utiliser cette fonction pour interagir avec les gens. Produire des armes et des équipements à la forge.</p>
+        </div>
+        <div class="obj-card">
+          <h4>Intégrer Disciplinaire & Judiciaire</h4>
+          <p>Un défi personnel pour sortir de sa réserve, apprendre à défendre ses décisions et à confronter les gens.</p>
+        </div>
+        <div class="obj-card">
+          <h4>S'imposer progressivement</h4>
+          <p>Il sait que son futur rôle nécessitera de prendre la parole et d'assumer ses choix. Le moment est venu de s'y préparer.</p>
+        </div>
+        <div class="obj-card wide">
+          <h4>Tenir ses Cahiers des Traces</h4>
+          <p>Continuer à écrire pour construire une compréhension précise du monde occulte à travers ses observations et consigner tout ce qu'il rencontre.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOYEN TERME -->
+    <div class="obj-tier">
+      <div class="obj-tier-header">
+        <span class="obj-tier-mark">Second palier</span>
+        <h3 class="obj-tier-title">Moyen terme</h3>
+      </div>
+
+      <div class="obj-grid">
+        <div class="obj-card">
+          <h4>Maîtriser les arts Fujiwara</h4>
+          <p>Comprendre les rituels et leur rôle dans la stabilité globale du clan et d'Hokkaido.</p>
+        </div>
+        <div class="obj-card">
+          <h4>Donner une utilité réelle aux Forces Spéciales d'Hokkaido</h4>
+          <p>Structurer une unité cohérente avec les besoins du clan et de la région.</p>
+        </div>
+        <div class="obj-card">
+          <h4>Proposer un projet de loi</h4>
+          <p>Participer à l'équilibre interne d'Hokkaido et affirmer sa capacité à défendre une idée devant ses pairs.</p>
+        </div>
+        <div class="obj-card">
+          <h4>Créer des cours spécialisés</h4>
+          <p>Transmettre certains savoirs Fujiwara (autorisés à divulguer) pour renforcer les bases des autres élèves.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- LONG TERME -->
+    <div class="obj-tier">
+      <div class="obj-tier-header">
+        <span class="obj-tier-mark">Horizon</span>
+        <h3 class="obj-tier-title">Long terme</h3>
+      </div>
+
+      <div class="obj-grid">
+        <div class="obj-card wide">
+          <h4>Prendre le rôle de patriarche Fujiwara</h4>
+          <p>À terme, assumer pleinement la responsabilité du clan, renforcer sa position et imposer le respect que le clan mérite.</p>
+        </div>
+        <div class="obj-card">
+          <h4>Forger une arme à partir d'un fléau vivant</h4>
+          <p>Shôzen missionnera des joueurs actifs et talentueux intéressés par le projet, pour qu'au final l'un d'entre eux obtienne le produit fini.</p>
+        </div>
+        <div class="obj-card">
+          <h4>Former une escouade spécialisée de disciples</h4>
+          <p>Un groupe de sans-clan qui deviendront les disciples de Shôzen, liés au Clan Fujiwara et missionnés régulièrement pour diverses tâches.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- PARTIE IV — EXPÉRIENCE GMOD -->
+  <section class="part-divider" id="partie-4">
+    <p class="part-num">Partie IV</p>
+    <h2 class="part-title">Mon expérience <em>Garry's Mod</em></h2>
+    <div class="part-line"></div>
+  </section>
+
+  <section class="exp-section">
+    <div class="exp-timeline">
+
+      <div class="exp-entry">
+        <h3>1560 heures de RP sur Garry's Mod</h3>
+        <p class="exp-meta">Mon parcours global</p>
+        <p>Au total, j'ai accumulé 1560 heures de roleplay sur Garry's Mod, sur plusieurs serveurs. Mon parcours est passé par le Naruto FOC puis FSC, le One Piece All Blue, et le SNK RP BOUGA.</p>
+      </div>
+
+      <div class="exp-entry">
+        <h3>JJK FOC</h3>
+        <p class="exp-meta">260 heures spécifiquement sur le serveur</p>
+        <p>J'ai 260 heures sur le JJK FOC. Cette expérience m'a permis de bien intégrer le ton et les codes attendus pour ce type de RP, et de me préparer à passer à l'étape supérieure : intégrer un clan avec un vrai lore et une identité à porter.</p>
+      </div>
+
+      <div class="exp-entry">
+        <h3>Aujourd'hui — Hokkaido, Clan Fujiwara</h3>
+        <p class="exp-meta">Candidature en cours</p>
+        <p>Je dépose ce dossier pour faire naître Shôzen au sein du Clan Fujiwara. J'aprécie énormément le rp de ses membres et j'ai envie de m'investir sérieusement et de construire quelque chose avec.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ANCIENS PERSONNAGES -->
+  <section class="past-section">
+    <h2 class="section-title" style="text-align:center; margin: 0 auto 64px;">Anciens <span class="accent">personnages</span></h2>
+
+    <div class="past-grid">
+
+      <div class="past-card">
+        <p class="past-server">Naruto FOC / FSC</p>
+        <h4>Saiteku Sekai</h4>
+        <p class="past-role">Tokobetsu jonin d'Ame · chef de la Chumon (disciplinaire) · co-directeur de la section académique · juge de la judiciaire · patriarche de la famille Sekai · aîné de la famille Fugumy</p>
+        <p>Mon premier personnage, qui a duré près de 8 mois IRL. Il était centré sur la parole et les liens, jouait un rôle plutôt support, et interagissait activement avec les villages sans rien garder pour lui (toujours donné ou fait gagné les parchemins pour sub). Avec ce perso j'ai formé une très grande famille pour laquelle j'imitais un rp clan, on se donnait mutuellement du RP.</p>
+        <p>Son but : former une famille influente au sein d'Ame. Objectif réussi.</p>
+      </div>
+
+      <div class="past-card">
+        <p class="past-server">JJK FOC</p>
+        <h4>Saiteku Kesai</h4>
+        <p class="past-role">Semi-classe 1 · membre des branches disciplinaire et judiciaire · production et logistique · disciple et secrétaire du dictateur Hakan Fujimae Lumenvar</p>
+        <p>Personnage centré sur la forge et l'expérimentation, avec pour objectif de repousser les limites de cet art, sans se limiter à un rôle technique. Il a participé à la réforme des lois au sein des branches disciplinaire et judiciaire, et a été intégré à la trame du nouveau conseil (malheureusement annulée).</p>
+        <p>Il a aussi joué comme agent double, vendant des informations peu importantes à Tokyo en échange de yen, ce qui lui a permis de tisser un large relationnel à Tokyo. Grâce à ça, il était souvent au courant des situations et utilisait ces infos à des fins personnelles.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-kanji">藤 原</div>
+    <p class="footer-name">Shôzen Fujiwara, <span>Clan Fujiwara</span></p>
+  </footer>
+
+</main>
+
+</body>
+</html>
